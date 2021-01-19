@@ -8,7 +8,10 @@ Github is an excellent tool to be used in large projects because github assists 
 
 So git and Github combined allow developers to work together on the same projects but in parallel of each other where their changes will not impact each other until approved and tested. The continous integration and continious deployment allows other developers to recieve to updated code in real time where they should not be impacted. 
 
-### Q2) What are the most important aspects of quality software?
+### Q2) What are the most important aspects of quality software?4
+
+https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/
+
 ### Q3) Outline a standard high level structure for a full-stack application and explain the components
 
 A standard high level structure we have worked with is the MVC architecture. MVC is an abbreviation of Model, View and Controller. Model represents the components of a database such as tables and its fields. Once a database has been created the model can then interact directly with the database. The Controller will direct the information stored in the database and the user inputs. It can take imput from the user and determine an action. The controller will take the information from the database and direct it towards the View component before being displayed to clients or users. The View component transforms the data into an aesthetically pleasing display.
@@ -135,9 +138,64 @@ As the program gets more advanced you can start to think about dynamic memory al
 
 ### Q11) Explain how objects can be manipulated, using examples from a suitable programming language
 
-class and objects are linked. Classes are a blueprint. Objects then become a design made from the blueprint. An object will hold specific information in the structure that the class is. Objects inherit everything from the class.  
+Class and objects are linked. Classes are a blueprint. Objects then become a design made from the blueprint. An object will hold specific information in relation to the structure of the class. Objects inherit everything from the class. If you combine a group of variables and functions into a class you get an object. Variables are know as properties and functions are known as methods.
+
+To manipulate any object first you will need to make an instance of that object. Too make an instance of any object the user will more then likely have to inherit the class of the object. Below I have developed a random class called surfboard that will take dimensions of a board to be ordered. Designed in python.
+
+    from surfboard import Surfboard
+
+    new_board = Surfboard()     # Instantiate an object of type Surfboard
+
+Now that we have an instance of new_board we can now manipulate the instance with some of the object properties and methods. Some example properties can be length, width, litres, tail_type. We could of placed these directly in the constructor and passed the properties into the Surfboard() object or we can do it manually as shown below.
+
+    new_board.length = 6.0 ( Thats in feet )
+    new_board.width = 18 ( Thats in inches )
+    new_board.litres = 35 ( Thats in litres )
+    new_board.tail_type = Rounded pin
+
+Now that all the properties have values we can figure out how to manipulate the properties for methods. Lets say we want to display all the values. Call it dimensions(). The syntax displayed below will print the values below in the format given.
+    
+    new_board.dimensions()
+
+The method in the class may look something like the code below:
+
+    def dimensions():
+        print ("""
+            length: self.length
+            width: self.width
+            litres: self.litres
+            tail_type: self.tail_type
+        """)
+
+We could possible build a cost method that will give a cost of the board plus many other features. I feel I have given the core overview of how to manipulation an object. When it comes to classes the world is really your oyster in what properties and methods can be built to suit the needs of the user.
 
 ### Q12) Explain how JSON can be manipulated, using examples from a suitable programming language
+
+In computer programming certain data will need to be transformed either into an object or into a stream of bytes so the data can be transmitted to a disk or send it over the network. What JSON does is convert an object into a string. Therefore turning it into a stream of bytes. In python there are some simple methods to convert data between object and string.
+
+##### JSON to an object:
+
+![json to object](docs/JSONToOBJECT.JPG)
+![Object to json](docs/ObjectToJSON.JPG)
+
+When converting to JSON the json.dumps() method can take in a parameter. The parameter is indent. An example is surfboard_json = json.dumps(surfboard_object,indent=4). What that means is  where ever there is a key value there will be indent of 4 spaces. Below is an example. I have added some rubbish data and fake list to see the full potential of the indent format. 
+
+![json format](docs/JSONFormatCode.JPG)
+![json format result](docs/JSONformat.JPG)
+
+There is also a parameter to sort all the keys in alphabetical order which would look like the example below:
+
+    surfboard_json = json.dumps(surfboard_object,indent=4, sort_key=True)
+
+
+
+
+
+
+
+
+
+
 ### Q13) For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes
 
 ![Answer to Q13](docs/Comment.JPG)
