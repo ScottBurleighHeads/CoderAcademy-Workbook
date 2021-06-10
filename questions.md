@@ -1,4 +1,4 @@
-# T4A1 - Developer Workbook
+# Developer Workbook: This workbook was completed to meet theoretical requirements while studying my final term at Coder Academy.
 
 ### Q1) Provide an overview and description of a standard source control process for a large project.
 
